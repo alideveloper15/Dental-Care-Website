@@ -1,0 +1,600 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --Dark-Navy: #1a1f36;
+    --Teal-Blue: #009da4;
+    --Soft-Gray: #d1d5db;
+    --Emerald-Green: #2ecc71;
+}
+
+body{
+    background-color: var(--Dark-Navy);
+}
+
+nav{
+    background-color: var(--Dark-Navy) !important;
+    position: absolute !important;
+    top: 0 !important;
+    margin-top: 5px !important;
+    width: 100% !important;
+    z-index: 1000;
+}
+
+.navbar-brand{
+    width: 15%;
+}
+
+.navbar-brand:hover{
+    transition: all 0.3s;
+    transform: scale(1.1);
+}
+
+.nav-link{
+    color: var(--Soft-Gray) !important;
+    font-weight: bold !important;
+}
+
+.nav-link:hover{
+    transition: all 0.3s;
+    color: var(--Emerald-Green) !important;
+    transform: scale(1.1);
+}
+.appointment {
+    background: transparent;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    border: none;
+    padding: 20px 30px;
+    cursor: pointer;
+    perspective: 30rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.308);
+  }
+  
+.appointment::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    background: linear-gradient(
+      320deg,
+      rgba(0, 140, 255, 0.678),
+      rgba(128, 0, 128, 0.308)
+    );
+    z-index: 1;
+    transition: background 3s;
+  }
+  
+.appointment:hover::before {
+    animation: rotate 1s;
+    transition: all 0.5s;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotateY(180deg);
+    }
+  
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+  
+
+
+
+/* 1. Home Page */
+
+.home-page{
+    width: 100%;
+    height: 100vh;
+    background-image: url(Images/dentist-with-smile.jpg);
+    background-image: rgba(0,0,0,0.5);
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(90%);
+}
+
+.home-left{
+    width: 40%;
+    position: relative;
+    top: 38vh;
+    left: 5vw;
+}
+
+.home-left>h1{
+    color: var(--Dark-Navy);
+    font-size: clamp(2rem,3rem,5rem);
+    font-weight: bold;
+}
+
+.home-left>p{
+    font-size: 1.2rem;
+    color: var(--Dark-Navy);
+}
+
+.btns {
+    padding: 15px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: var(--Dark-Navy);
+    z-index: 1;
+    background: var(--Teal-Blue);
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+}
+   
+.btns::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: var(--Dark-Navy);
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms
+}
+   
+.btns:hover {
+    color: white;
+}
+   
+.btns:hover::before {
+    width: 100%;
+}
+
+
+
+/* Welcome Message Section */
+
+.welcome{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--Teal-Blue);
+    display: flex;
+}
+
+.welcome-left{
+    height: 100%;
+}
+
+.text{
+    position: relative;
+    top: 50;
+}
+
+.welcome-left>h1{
+    color: var(--Emerald-Green);
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    text-shadow: var(--Emerald-Green) 0px 0px 50px;
+}
+
+.welcome-left>p{
+    color: var(--Emerald-Green);
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.welcome-right{
+    width: 100%;
+    height: 100%;
+    
+}
+
+
+/* Featured Services Section */
+
+.services{
+    background-color: var(--Dark-Navy);
+    background-image: url(Images/watercolor-5062356_1920.jpg);
+    background-image: rgba(0,0,0,0.5);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 5vh;
+}
+
+.services-heading>h1{
+    color: var(--Dark-Navy);
+    text-shadow: white 0px 0px 10px;
+}
+
+.services-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for the card */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+/* On hover */
+.card:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+}
+
+
+/* MEDILIFE */
+
+
+.medilife-bg{
+    width: 100%;
+    min-height: 70vh;
+    background-color: #031020;
+}
+
+.medilife{
+    width: 100%;
+    height: 100%;
+}
+
+
+.medi-1 >p{
+    color: white;
+}
+
+
+.medi-2, .medi-3 , .medi-4 > h5{
+    color: white;
+}
+
+.medi-2{
+    padding-left: 5vw;
+}
+
+.news > h6{
+    color: white;
+}
+
+.news > p{
+    color: white;
+    font-size: 0.9rem;
+}
+
+.icons > i{
+    color: white;
+    padding-right: 1vw;
+}
+
+.icons > i:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.medilife-form{
+    width: 100%;
+    height: fit-content;
+    background-color: var(--dark-blue-clr);
+    overflow: hidden;
+}
+
+.full{
+    border: white solid 2px;
+    border-radius: 5px;
+    width: 60%;
+    margin-bottom: 2vh;
+}
+
+.full>input{
+    background-color: transparent;
+    border: 0px;
+    padding: 1vw;
+    color: white;
+    width: 100%;
+    height: 100%z
+}
+
+.full>input::placeholder{
+    color: white;
+}
+
+
+.form-button{
+    width: fit-content;
+    padding: 7px 10px;
+    border-radius: 5px;
+    background-color: var(--Soft-Gray);
+
+}
+
+.form-button>a{
+    color: var(--Dark-Navy);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.form-button>{
+    transform: scale(1.05);
+}
+
+
+.rights{
+    color: var(--Soft-Gray);
+    text-align: center;
+}
+
+
+/* OTHERS */
+
+/* CONTACT */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 12px;
+  line-height: 30px;
+  color: #777;
+  background: #4CAF50;
+}
+
+.container {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea,
+#contact button[type="submit"] {
+  font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+}
+
+#contact {
+  background: #F9F9F9;
+  padding: 25px;
+  margin: 150px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#contact h3 {
+  display: block;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+#contact h4 {
+  margin: 5px 0 15px;
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+#contact input[type="text"]:hover,
+#contact input[type="email"]:hover,
+#contact input[type="tel"]:hover,
+#contact input[type="url"]:hover,
+#contact textarea:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #aaa;
+}
+
+#contact textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+
+#contact button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #4CAF50;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+#contact button[type="submit"]:hover {
+  background: #43A047;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#contact button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.copyright {
+  text-align: center;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: 0;
+  border: 1px solid #aaa;
+}
+
+::-webkit-input-placeholder {
+  color: #888;
+}
+
+:-moz-placeholder {
+  color: #888;
+}
+
+::-moz-placeholder {
+  color: #888;
+}
+
+:-ms-input-placeholder {
+  color: #888;
+}
+
+
+.location>h3{
+    font-weight: bolder;
+    margin-bottom: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.map{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+/* ABOUT_US */
+
+.o-m{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.facility-bg{
+    width: 100%;
+    background-color: white;
+    overflow-x: hidden;
+    margin-bottom: 60px;
+}
+
+.facility-control{
+    width: 100%;
+    padding-left: 8vw;
+    padding-right: 8vw;
+}
+
+.facility-left{
+    padding-left: 8vw;
+    padding-right: 8vw;
+}
+
+.facility-left > h1{
+    font-size: clamp(2rem , 4vw, 2.7rem);
+    color: var(--Dark-Navy);
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.facility-left > p{
+    color: var(--Dark-Navy);
+    font-size: 1.1rem;
+    line-height: 4.5vh;
+    text-align: justify;
+}
+
+
+
+.team-text>p{
+    color: var(--Dark-Navy);
+    font-size: 1.1rem;
+    line-height: 4.5vh;
+    text-align: center;
+}
+
+
+.team-title{
+    font-weight: bolder !important;
+}
+
+
+/* TESTIMONIAL */
+
+.rating:not(:checked) > input {
+    position: absolute;
+    appearance: none;
+  }
+  
+  .rating:not(:checked) > label {
+    float: right;
+    cursor: pointer;
+    font-size: 30px;
+    color: #666;
+  }
+  
+  .rating:not(:checked) > label:before {
+    content: '★';
+  }
+  
+  .rating > input:checked + label:hover,
+  .rating > input:checked + label:hover ~ label,
+  .rating > input:checked ~ label:hover,
+  .rating > input:checked ~ label:hover ~ label,
+  .rating > label:hover ~ input:checked ~ label {
+    color: #e58e09;
+  }
+  
+  .rating:not(:checked) > label:hover,
+  .rating:not(:checked) > label:hover ~ label {
+    color: #ff9e0b;
+  }
+  
+  .rating > input:checked ~ label {
+    color: #ffa723;
+  }
+  
+  
+  
+  

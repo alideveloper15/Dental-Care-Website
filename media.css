@@ -1,0 +1,14 @@
+@media (max-width: 768px) {
+    .card{
+        width: 75vw !important;
+    }
+
+    .home-left{
+        width: 100%;
+        top: 25vh;
+    }
+
+    .navbar-brand{
+        width: 30% !important;
+    }
+}
